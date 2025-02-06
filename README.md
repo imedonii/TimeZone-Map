@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# 🌍 Timezone Map
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Timezone Map**! 🕰️ A fully interactive world map that allows you to check the local time of any country with just a click! 🌎✨
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 🗺️ **Interactive World Map** – Click on any country to get its current local time.
+- ⏰ **Live Clock** – Updates in real-time to keep you in sync with the world.
+- 🌐 **Instant Timezone Lookup** – Fetches data dynamically from an API.
+- 🎨 **Smooth UI** – Hover over countries to highlight them.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Technologies Used
+- ⚛️ **React (TypeScript)** – For building the interactive UI.
+- 🎨 **CSS/Less** – For styling the map and tooltips.
+- 🌍 **Abstract API** – To fetch real-time timezone data.
 
-## Expanding the ESLint configuration
+## 🛠️ Installation
+```sh
+# Clone the repo
+git clone https://github.com/imedonii/TimeZone-Map.git
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Install dependencies
+npm install
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Start the development server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📸 Screenshots
+![Screenshot From 2025-02-06 11-33-30](https://github.com/user-attachments/assets/19c2a29d-10d6-48cd-bb15-cd68f6cc9c33)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📜 How It Works
+1. 🖱️ **Hover over a country** to see it highlighted.
+2. 🌎 **Click on a country**, and its current local time will appear.
+3. 🕰️ **The time updates in real-time**, ensuring accuracy.
+
+## 📌 Future Improvements
+- 🌍 Add support for **Daylight Saving Time adjustments**.
+- 📍 Allow users to **search for a country** instead of clicking.
+- 🔔 Enable **notifications for timezone changes**.
+
+## 🤝 Contributing
+Pull requests are welcome! 🎉 If you have any ideas or improvements, feel free to contribute.
+
+## 📜 License
+This project is licensed under the MIT License.
+
+---
+👨‍💻 Developed with ❤️ by Edon (https://github.com/imedonii)
+
