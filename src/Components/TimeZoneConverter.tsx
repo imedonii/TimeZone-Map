@@ -4,6 +4,7 @@ export const TimeZoneConverter = () => {
   const [time, setTime] = useState('');
   const [hoveredCountry, setHoveredCountry] = useState('');
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [countrySelect, setCountrySelect] = useState('');
 
   interface TimeData {
     datetime: string;
@@ -11,18 +12,18 @@ export const TimeZoneConverter = () => {
   }
 
   let lastRequestTime = 0;
-  const rateLimitDelay = 1000; // Delay in milliseconds (1 second)
+  const rateLimitDelay = 1000;
 
   const getUserTime = async (place: string): Promise<void> => {
     const currentTime = Date.now();
 
     if (currentTime - lastRequestTime < rateLimitDelay) {
-      return; // Skip if the time since the last request is too short
+      return;
     }
 
     lastRequestTime = currentTime;
 
-    const apiKey = '87e742342eb14f40b58a497c6843ab34';
+    const apiKey = '';
     const apiUrl = `https://timezone.abstractapi.com/v1/current_time/?api_key=${apiKey}&location=${place}`;
 
     try {
@@ -42,7 +43,7 @@ export const TimeZoneConverter = () => {
           x: (event as MouseEvent).clientX + 10,
           y: (event as MouseEvent).clientY - 60,
         });
-        (e as HTMLElement).style.fill = 'pink';
+        (e as HTMLElement).style.fill = 'gray';
       });
 
       e.addEventListener('mouseleave', () => {
@@ -50,7 +51,10 @@ export const TimeZoneConverter = () => {
         (e as HTMLElement).style.fill = '#ececec';
       });
 
-      e.addEventListener('click', () => getUserTime(e.id));
+      e.addEventListener('click', () => {
+        getUserTime(e.id);
+        setCountrySelect(e.id);
+      });
     });
   }, []);
 
@@ -71,7 +75,9 @@ export const TimeZoneConverter = () => {
       )}
 
       <div id="timeCont">
-        <p>{time}</p>
+        <p>
+          {countrySelect}'s time: {time}
+        </p>
       </div>
 
       <svg
