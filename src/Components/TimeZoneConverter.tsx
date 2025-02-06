@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 
 export const TimeZoneConverter = () => {
-  const [time, setTime] = useState('');
+  const date = new Date();
+  const formattedTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+  const [time, setTime] = useState(`${formattedTime}`);
   const [hoveredCountry, setHoveredCountry] = useState('');
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [countrySelect, setCountrySelect] = useState('');
+  const [countrySelect, setCountrySelect] = useState('Kosova');
 
   interface TimeData {
     datetime: string;
